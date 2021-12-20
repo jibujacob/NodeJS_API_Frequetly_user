@@ -94,19 +94,19 @@
 
 #### Logout Route
 
-- [] set token cookie equal to some string value
-- [] set expires:new Date(Date.now())
+- [x] set token cookie equal to some string value
+- [x] set expires:new Date(Date.now())
 
 #### User Routes Structure
 
-- [] add userController file
-- [] export (getAllUsers,getSingleUser,showCurrentUser,updateUser,updateUserPassword) functions
-- [] res.send('some string value')
-- [] setup userRoutes file
-- [] import all controllers
-- [] setup just one route - router.route('/').get(getAllUsers);
-- [] import userRoutes as userRouter in the app.js
-- [] setup app.use('/api/v1/users', userRouter)
+- [x] add userController file
+- [x] export (getAllUsers,getSingleUser,showCurrentUser,updateUser,updateUserPassword) functions
+- [x] res.send('some string value')
+- [x] setup userRoutes file
+- [x] import all controllers
+- [x] setup just one route - router.route('/').get(getAllUsers);
+- [x] import userRoutes as userRouter in the app.js
+- [x] setup app.use('/api/v1/users', userRouter)
 
 #### GetAllUsers and GetSingleUser
 
