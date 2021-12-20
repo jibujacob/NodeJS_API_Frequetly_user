@@ -22,7 +22,7 @@ app.use(cookieParser(process.env.JWT_SECRET));
 const port = process.env.PORT || 5001;
 
 app.get('/',(req,res)=>{
-    console.log(req.signedCookies);
+    // console.log(req.signedCookies);
     res.status(200).json({msg:"Welcome to E-commerce API"});
 });
 
