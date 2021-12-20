@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const express = require("express");
 const cookieParser = require("cookie-parser")
 const connectDB = require("./db/connect");
+
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler")
 
@@ -28,7 +29,7 @@ app.get('/',(req,res)=>{
 });
 
 app.use("/api/v1/auth",authRoutes);
-app.use("/api/v1/user",userRoutes);
+app.use("/api/v1/users",userRoutes);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
