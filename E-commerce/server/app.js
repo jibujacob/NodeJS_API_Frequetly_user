@@ -3,6 +3,7 @@ require("dotenv").config()
 require('express-async-errors');
 const morgan = require('morgan')
 const express = require("express");
+const cookieParser = require("cookie-parser")
 const connectDB = require("./db/connect");
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler")
@@ -13,13 +14,15 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 
 //Middleware
-app.use(morgan("tiny"))
+app.use(morgan("tiny"));
 app.use(express.json());
+app.use(cookieParser(process.env.JWT_SECRET));
 
 //Variables
 const port = process.env.PORT || 5001;
 
 app.get('/',(req,res)=>{
+    console.log(req.signedCookies);
     res.status(200).json({msg:"Welcome to E-commerce API"});
 });
 
