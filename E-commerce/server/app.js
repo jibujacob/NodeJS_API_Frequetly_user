@@ -36,7 +36,6 @@ app.use(mongoSanitize())
 
 //Middleware
 app.set('trust proxy',1)
-app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
 app.use(express.static("./public"))
@@ -44,10 +43,6 @@ app.use(fileUpload())
 //Variables
 const port = process.env.PORT || 5001;
 
-app.get('/',(req,res)=>{
-    // console.log(req.signedCookies);
-    res.status(200).json({msg:"Welcome to E-commerce API"});
-});
 
 app.use("/api/v1/auth",authRoutes);
 app.use("/api/v1/users",userRoutes);
