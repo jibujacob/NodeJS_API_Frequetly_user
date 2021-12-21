@@ -3,8 +3,7 @@ const routes = require("express").Router();
 const {createProduct, getAllProducts,getSingleProduct,
      updateProduct, deleteProduct, uploadImage} = require("../controllers/productController")
 const {authenticateUser :authenticateUserMiddleware,
-        authorizePermissions:authorizePermissionsMiddleware,
-        authenticateUser} = require("../middleware/authentication")
+        authorizePermissions:authorizePermissionsMiddleware} = require("../middleware/authentication")
 const {getSingleProductReviews} = require("../controllers/reviewController")
 
 routes.route("/").post(authenticateUserMiddleware,authorizePermissionsMiddleware('admin'),createProduct)
